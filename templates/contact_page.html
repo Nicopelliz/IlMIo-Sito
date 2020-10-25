@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+   <!-- <link href="{% static 'css/home.css' %}" rel="stylesheet">-->
+<style>
+
+body {
+    margin: 0 -15px 0;
+}
+.container {
+     margin: 0 auto;
+     padding: 0 auto;
+     text-align: center;
+}
+.container {
+    border: 3px solid #ddd;
+    border-radius: 12px;
+    max-width: 80%;
+    height: auto;
+    background-color: #008B8B;
+
+}
+
+.mb-4 {
+    margin-top: 12px
+}
+
+input {
+    padding-top: 12px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.form-control {
+   width: 70%;
+}
+
+.form-control1 {
+   width: 85%;
+}
+textarea {
+    margin-top: 12px;
+    border-radius: 4px;
+}
+
+.btn {
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding: 4px;
+    background-color:#EBECF0;
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+
+body {
+    margin: 15px 10px 15px;
+}
+
+  .container {
+    margin-top: 35px;
+    border: 5px solid #ddd;
+    max-width: 45%;
+}
+
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    margin-top: 50px;
+    border: 7px solid #ddd;
+    max-width: 35%;
+}
+
+</style>
+
+</head>
+<body>
+{% if user_name %}
+
+<center><h3 style="color:LawnGreen">Your message has been sended, Thanks!</h3></center>
+
+{% else %}
+
+<div class="container">
+    <h1 class="mb-4 tm-text-gray">Send Message</h1>
+    <form action="{% url 'send_email' %}" class="tm-contact-form" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-group col-xl-6">
+                <input  class="form-control" id="contact_name" name="contact_name" placeholder=" Name..."
+                       required type="text"/>
+            </div>
+            <div class="form-group col-xl-6">
+                <input size="31px" class="form-control" id="contact_email"aria-placeholder="20" name="contact_email" placeholder=" E-mail..."
+                       required type="email"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control1" id="contact_message"  name="contact_message" placeholder=" Your Message..."
+                      required cols="27" rows="6"></textarea>
+        </div>
+        <button class="btn  tm-btn-send" type="submit">Send It</button>
+    </form>
+</div>
+</body>
+
+{% endif %}
+
+{% endblock %}

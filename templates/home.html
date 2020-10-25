@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="{% static 'css/home.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="gallery">
+
+
+    <div class="image">
+        <img alt="drumming" class="image__img" src="{% static 'img/batteria.jpeg' %}"/>
+        <a href="https://www.youtube.com/channel/UCdt5KBl8tlXVfHXyumlsTkQ" target="_black">
+            <div class="image__overlay image__overlay--blur">
+                <div class="image__title">Drumming</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="image">
+        <img alt="coding" class="image__img" src="{% static 'img/codici.jpeg' %}"/>
+        <a href="https://github.com/Nicopelliz" target="_black">
+            <div class="image__overlay image__overlay--blur">
+                <div class="image__title">Coding</div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="image">
+        <img alt="coding" class="image__img" src="{% static 'img/criptovalute.jpeg' %}"/>
+        <a href="crypto">
+            <div class="image__overlay image__overlay--blur">
+                <div class="image__title">Crypto</div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="image">
+        <img alt="agricolture" class="image__img" src="{% static 'img/agricoltura.jpg' %}"/>
+        <a href="organic">
+            <div class="image__overlay image__overlay--blur">
+                <div class="image__title">Organic</div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="image">
+        <img alt="projects" class="image__img" src="{% static 'img/progetti.jpeg' %}"/>
+        <a href="projects">
+            <div class="image__overlay image__overlay--blur">
+                <div class="image__title">Projects</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="image">
+        <div class="playing">
+            <img alt="music" class="image__img" src="{% static 'img/suonare.jpg' %}"/>
+            <a href="music">
+                <div class="image__overlay image__overlay--blur">
+                    <div class="image__title">Music</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+{% endblock %}
+
+
+
+
