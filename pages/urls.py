@@ -9,5 +9,5 @@ urlpatterns = [
     path('coding/', coding, name='coding'),
     path('organic/', organic, name='organic'),
     path('projects/', projects, name='projects'),
-    path('crypto/', crypto, name='crypto'),
+    # path('crypto-blog/', crypto, name='crypto'),
 ]

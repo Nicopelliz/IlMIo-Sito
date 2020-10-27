@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from contact_page import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
-    path('contact/', views.send_email, name='send_email')
+    path('crypto-blog/', include('cryptoblog.urls')),
+    path('contact/', views.send_email, name='send_email'),
 ]

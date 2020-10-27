@@ -3,39 +3,169 @@
 <html lang="en">
 
 <head>
+
+    <title>Niccolò Pellizzari</title>
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Niccolò Pellizzari</title>
-    <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/a21f4baaed.js"></script>
 
 </head>
 <body>
-    <header>
 
-        <p><a href="/">Home</a></p>
-        <p><a href="/contact">Contact</a></p>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-    </header>
-    <div id="container">
-        <div id="main">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+}
 
-    {% block content %}
-    {% endblock %}
+header, body, footer {
 
-   </div>
+    background-color: #808080;
+}
 
+.fas {
+    padding:4px;
+    font-size: 15px
+}
+
+.push-right {
+    margin-left: 28px;
+}
+html, body {
+    height: 100%;
+    }
+
+#container {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 100px;
+}
+
+body {
+    margin: 0 8px 0;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.home-button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+ .home-button:hover {
+    background: #008B8B;
+    color: black;
+    border-radius: 4px;
+}
+
+#head-base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%
+}
+
+
+
+#footer {
+    padding: 30px 10%;
+    margin-top: -100px;
+    position: relative;
+    height: 100px;
+    bottom:0;
+    width:100%;
+    clear: both;
+
+}
+
+#footer .text-center {
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 1000px) {
+
+    .push-right {
+    margin-left: 22px;
+}
+@media screen and (max-width: 697px) {
+
+    .push-right {
+    margin-left: 10px;
+}
+@media screen and (max-width: 385px) {
+
+    .push-right {
+    margin-left: 0;
+}
+
+}
+
+
+
+</style>
+
+
+<header id="head-base">
+
+    <p class="home"><a class="home-button" href="/">Home</a></p>
+
+    <audio id="myAudio">
+        <source src="{% static 'mp3/gumtree.mp3'%}"
+                type='audio/mp4'>
+        Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <a class="home-button push-right" onclick="aud_play_pause()" type="button"><i class="fas fa-play"></i><i
+            class="fas fa-pause"></i></a>
+    <script>
+function aud_play_pause() {
+  var myAudio = document.getElementById("myAudio");
+  if (myAudio.paused) {
+    myAudio.play();
+  } else {
+    myAudio.pause();
+  }
+}
+
+    </script>
+
+
+    <p class="home"><a class="home-button" href="/contact">Contact</a></p>
+
+</header>
+<div id="container">
+    <div id="main">
+
+        {% block content %}
+        {% endblock %}
 
     </div>
 
-    <footer id="footer">
-        <div class="col-lg-12">
-            <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
-                <span class="tm-current-year">2020</span> Niccolò Pellizzari
-            </p>
-        </div>
-    </footer>
+
+</div>
+
+
+<footer id="footer">
+    <div class="col-lg-12">
+        <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
+            <span class="tm-current-year">2020</span> Niccolò Pellizzari
+        </p>
+    </div>
+</footer>
 </body>
 
 </html>
