@@ -45,9 +45,15 @@
 .title-text {
     font-weight: 900;
 }
+
+
 .text-muted {
     margin-top:5px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+}
+
+hr {
+    margin-left: -100px;
 }
 
 .card-text{
