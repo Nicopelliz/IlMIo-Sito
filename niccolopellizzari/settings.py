@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'pages',
     'cryptoblog',
     # third parties apps
-    'crispy_forms',
+    'widget_tweaks', 
 
 ]
 

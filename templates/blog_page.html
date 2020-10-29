@@ -28,10 +28,11 @@
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
-                    <p class="h6">by {{post.author.first_name}} {{post.author.last_name}} ||| {{ post.created_on}} </p>
-                    <h2 class="card-title">{{ post.title }}</h2>
-                    <p>{{post.content|slice:":200" }}</p><br>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="h6">{{ post.created_on}} </p>
+                    <h2 class="h5">{{ post.title }}</h2>
+                    <p class="h5">{{post.content|slice:":200" }}</p><br>
+                    <p class="h4">by {{post.author.first_name}} {{post.author.last_name}} </p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn  btn-read-more">Read More &rArr;</a>
                 </div>
             </div>
             {% endfor %}

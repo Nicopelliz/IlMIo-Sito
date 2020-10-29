@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
+{% load widget_tweaks %}
 {% block content %}
 
 <head>
@@ -12,46 +12,56 @@
 <div class="container2">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
+            <h1 class="post-title">{% block title %} {{ post.title }} {% endblock title %}</h1>
             <div class="card-body">
-                <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
-                <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-date">{{ post.created_on }}</p>
                 <p class="card-text ">{{ post.content | safe }}</p>
+                <h4 class="posted-by">By {{post.author.first_name}} {{post.author.last_name}} </h4>
             </div>
         </div>
-
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="card-body">
+        <div class="card-body card">
+            <div class="col-md-8 card mb-4  mt-3 ">
                 <!-- comments -->
                 <h2>{{ comments.count }} comments</h2>
                 <ul>
                     {% for comment in comments %}
                     <li>
                         <div class="comments" style="padding: 10px;">
-                            <p class="font-weight-bold">
+                            <h4 class="comment-name">
                                 {{ comment.name }}
-                                <span class=" text-muted font-weight-normal">
+                                <span class="comment-date">
                                   {{ comment.created_on }}
                                 </span>
-                            </p>
-                            {{ comment.body | linebreaks }}
+                            </h4>
+                            {{ comment.body | linebreaks }}<br>
+                            <hr>
                         </div>
                     </li>
                     {% endfor %}
                 </ul>
             </div>
-        </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <div class="card-body">
+            <div class="col-md-8 card mb-4  mt-3 ">
                 {% if new_comment %}
                 <div class="alert alert-success" role="alert">
-                    Your comment is awaiting moderation
+                    Comment posted!
                 </div>
+                <a class="btn  btn-back" href="{% url 'blog_home' %}">&lArr; Back</a>
                 {% else %}
                 <h3>Leave a comment</h3>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form.as_p }}
+                <div class="comment_form" method="post">
                     {% csrf_token %}
-                    <button class="btn btn-primary  btn-lg" type="submit">Submit</button>
+                    <div class="form-group col-xl-6">
+                        {% render_field comment_form.name class="input" placeholder=" your name..." %}
+                    </div>
+                    <div class="form-group col-xl-6">
+                        {% render_field comment_form.email class="input" placeholder=" your email..." %}
+                    </div>
+                    <div class="form-group">
+                        {% render_field comment_form.body rows="3" class="textarea" placeholder=" comment..." %}
+                    </div>
+                    <div class="btn-submit">
+                        <button class="btn" type="submit">Submit</button>
+                    </div>
                 </form>
                 {% endif %}
             </div>

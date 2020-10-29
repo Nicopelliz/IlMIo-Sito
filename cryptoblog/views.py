@@ -27,7 +27,6 @@ def post_detail(request, slug):
             new_comment.save()
     else:
         comment_form = CommentForm()
-
     return render(request, template_name1, {'post': post,
                                             'comments': comments,
                                             'new_comment': new_comment,
