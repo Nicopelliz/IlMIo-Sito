@@ -7,8 +7,7 @@
 <head>
     <link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
 </head>
-
-
+<body>
 <div class="container2">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
@@ -16,18 +15,26 @@
             <div class="card-body">
                 <p class="post-date">{{ post.created_on }}</p>
                 <p class="card-text ">{{ post.content | safe }}</p>
-                <h4 class="posted-by">By {{post.author.first_name}} {{post.author.last_name}} </h4>
+                <h4 class="posted-by">By {{post.author}} {{post.author.last_name}} </h4>
+                <div class="justify">
+                <a class="btn  btn-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
+                <a class="btn  btn-back  btn-update" href="{% url 'update_post' post.pk %}">Edit</a>
+                <a class="btn  btn-back  btn-delete" href="{% url 'delete_post' post.pk %}">Delete</a>
+                </div>
             </div>
         </div>
+
         <div class="card-body card">
             <div class="col-md-8 card mb-4  mt-3 ">
                 {% if new_comment %}
-                <div class="alert alert-success" role="alert">
-                    Comment posted!
+                <div class="text-align">
+                    <div class="alert alert-success" role="alert">
+                        Comment posted!
+                    </div>
+                    <a class="btn  btn-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
                 </div>
-                <a class="btn  btn-back" href="{% url 'blog_home' %}">&lArr; Back</a>
                 {% else %}
-                <h3 class="alert1">Leave a comment</h3>
+                <h3 class="title-text">Leave a comment</h3>
                 <form class="comment_form" method="post">
                     {% csrf_token %}
                     <div class="form-group col-xl-6">
@@ -44,7 +51,7 @@
                     </div>
                 </form>
                 {% endif %}
-                <h2>{{ comments.count }} comments</h2>
+                <h2 id="comments">{{ comments.count }} comments</h2>
                 <ul>
                     {% for comment in comments %}
                     <li>
@@ -68,5 +75,6 @@
         </div>
     </div>
 </div>
+</body>
 {% endblock content %}
 

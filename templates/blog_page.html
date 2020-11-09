@@ -4,9 +4,9 @@
 
 {% block content %}
 <head>
-<link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
 </head>
-
+<body>
 <header class="masthead">
     <div class="overlay"></div>
     <div id="container1">
@@ -23,16 +23,16 @@
 </header>
 <div id="container2">
     <div class="row">
-
         <div class="col-md-8 mt-3 left">
+            <h3><a class="add-post" href="{% url 'add_post' %}">+ ADD POST</a></h3>
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
                     <p class="h6">{{ post.created_on}} </p>
                     <h2 class="h5">{{ post.title }}</h2>
                     <p class="h5">{{post.content|slice:":200" }}</p><br>
-                    <p class="h4">by {{post.author.first_name}} {{post.author.last_name}} </p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn  btn-read-more">Read More &rArr;</a>
+                    <p class="h4">by {{post.author}} {{post.author.last_name}} </p>
+                    <a href="{% url 'post_detail' post.pk  %}" class="btn  btn-read-more">Read More&Rightarrow;</a>
                 </div>
             </div>
             {% endfor %}
@@ -40,6 +40,7 @@
 
     </div>
 </div>
+</body>
 
 
 

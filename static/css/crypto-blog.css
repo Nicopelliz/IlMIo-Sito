@@ -1,3 +1,7 @@
+body {
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .masthead {
     margin-left: auto;
     margin-right: auto;
@@ -14,7 +18,6 @@
 
 #container1 h3 {
     text-align: center;
-    font-family: "Montserrat", sans-serif;
     font-size: 3em;
     font-weight: bold;
 }
@@ -35,8 +38,24 @@
     margin-bottom: 1%;
 }
 
+.add-post {
+    background: rgb(172, 83, 83);
+    color: black;
+    width: 125px;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 4px;
+    text-align: right;
+    margin-left: 66%;
+    text-decoration: none;
+}
+
+.add-post:hover {
+    background: rgb(147, 108, 108);
+    padding: 5px;
+}
 .card-body{
-    border: solid 2px black;
+    border: solid 2.5px black;
     border-radius: 5px;
     background-color: white;
     padding: 15px;
@@ -45,30 +64,68 @@
 .btn {
     margin-top: 10px;
     font-size: 18px;
+    padding: 3px;
+    background:rgb(192,192,192);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 3px;
 }
 
-.btn-back {
-    margin-left: -20px;
+.btn:hover {
+
+    font-size: 18px;
+    padding: 3px 8px;
+    background:rgb(169,169,169);
 }
+
+
+.btn-back {
+    margin-left: 20px;
+    padding: 3px;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
 .btn-submit {
     text-align: center;
     margin: auto;
 }
 
-.alert1 {
+.justify {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#comments {
     text-align: center;
+    margin: 15px;
+}
+
+.form-content {
+    width: 100%;
+    padding: 3px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.form-title {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
     font-size: 20px;
+}
+
+.form-author {
+    margin: 10px 0;
+    width: 80%;
+    height: 30px;
 }
 
 .alert {
     text-align: center;
     font-size: 20px;
     color: green;
-}
-
-.titletag {
-    text-align: center;
-    font-size: 20px;
 }
 
 .h6 {
@@ -89,13 +146,18 @@
     margin-bottom: 10px;
 }
 
+.crypto-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .comment-date {
     float: right;
 }
 
 .title-text {
     font-weight: 900;
-
+    text-align: center;
 }
 
 .post-title {
@@ -106,6 +168,7 @@
 
     padding: 15px;
 }
+
 
 .post-date {
     margin-bottom: 1%;
@@ -134,6 +197,9 @@ textarea {
     margin-top: 4px;
 }
 
+#id_content {
+    height: 55%;
+}
 
 
 @media screen and (max-width: 1000px) {
