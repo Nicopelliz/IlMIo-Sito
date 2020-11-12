@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path('crypto-blog/', include('cryptoblog.urls')),
-    path('contact/', include('contact_page.urls'))
+    path('contact/', include('contact_page.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]

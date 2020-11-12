@@ -6,12 +6,27 @@
 
 
 <html lang="en">
+
 <head>
     <link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
+<style>
+img {
+        display: block;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px
+    }
+.h3 {
+    text-align: center;
+}
+</style>
 </head>
-<body>
-<h1 class="crypto-title">Delete post</h1>
 
+<body>
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<h1 class="crypto-title">Delete post</h1>
 <div class="col-md-8 mt-3 left">
     <div class="card mb-4">
         <div class="card-body">
@@ -29,7 +44,14 @@
         </div>
     </div>
 </div>
-
+{% else %}
+<h1 class="h3">You are not the correct user</h1>
+<img src="{% static 'img/not-allowed.png' %}" alt="">
+{% endif %}
+{% else %}
+<h1 class="h3">You have to log-in</h1>
+<img src="{% static 'img/not-allowed.png' %}" alt="">
+{% endif %}
 </body>
 </html>
 

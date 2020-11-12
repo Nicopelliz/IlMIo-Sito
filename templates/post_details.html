@@ -8,46 +8,47 @@
     <link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
 </head>
 <body>
+{% if new_comment %}
+                <div class="text-align">
+                    <div class="alert alert-success" role="alert" style="color:LawnGreen">
+                        Comment posted
+                    </div>
+                    <a class="btn" id="btn-comment-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
+                </div>
+{% else %}
+{% endif %}
 <div class="container2">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
             <h1 class="post-title">{% block title %} {{ post.title }} {% endblock title %}</h1>
             <div class="card-body">
                 <p class="post-date">{{ post.created_on }}</p>
-                <p class="card-text ">{{ post.content | safe }}</p>
-                <h4 class="posted-by">By {{post.author}} {{post.author.last_name}} </h4>
+                <p class="card-text ">{{ post.content|safe }}</p>
+                <h4 class="posted-by">by {{ post.author }}</h4>
                 <div class="justify">
                 <a class="btn  btn-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
+
+                {% if user.is_authenticated %}
+                    {% if user.id == post.author.id %}
                 <a class="btn  btn-back  btn-update" href="{% url 'update_post' post.pk %}">Edit</a>
                 <a class="btn  btn-back  btn-delete" href="{% url 'delete_post' post.pk %}">Delete</a>
+                    {% endif %}
+                {% endif %}
+
                 </div>
             </div>
         </div>
 
         <div class="card-body card">
-            <div class="col-md-8 card mb-4  mt-3 ">
+            <div id="comment-section">
                 {% if new_comment %}
-                <div class="text-align">
-                    <div class="alert alert-success" role="alert">
-                        Comment posted!
-                    </div>
-                    <a class="btn  btn-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
-                </div>
                 {% else %}
                 <h3 class="title-text">Leave a comment</h3>
-                <form class="comment_form" method="post">
+                <form method="post">
                     {% csrf_token %}
-                    <div class="form-group col-xl-6">
-                        {% render_field comment_form.name class="input" placeholder=" your name..." %}
-                    </div>
-                    <div class="form-group col-xl-6">
-                        {% render_field comment_form.email class="input" placeholder=" your email..." %}
-                    </div>
-                    <div class="form-group">
-                        {% render_field comment_form.body rows="3" class="textarea" placeholder=" comment..." %}
-                    </div>
+                    {{ comment_form.as_p }}
                     <div class="btn-submit">
-                        <button class="btn" type="submit">Submit</button>
+                        <button class="btn" type="submit">Comment</button>
                     </div>
                 </form>
                 {% endif %}
@@ -68,9 +69,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-            </div>
-            <div class="col-md-8 card mb-4  mt-3 ">
-
             </div>
         </div>
     </div>

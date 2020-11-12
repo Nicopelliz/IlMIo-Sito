@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+<html lang="en">
+<head>
+    <link href="{% static 'css/crypto-blog.css' %}" rel="stylesheet" type="text/css">
+
+<style>
+        ul {
+            display: none;
+        }
+        .errorlist {
+            display: block;
+            font-size: 14px;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+        #id_password, #id_username {
+            width: 100%;
+            height: 35px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+</style>
+</head>
+<body>
+<h1 class="crypto-title">Login</h1>
+<div class="col-md-8 mt-3 left">
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="form-group">
+            <form method="post" >
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn-submit">
+                        <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+            </div>
+            <a class="btn  btn-back" href="{% url 'blog_home' %}">&Leftarrow;Back</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+{% endblock content %}

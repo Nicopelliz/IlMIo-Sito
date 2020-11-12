@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'contact_page',
     'pages',
     'cryptoblog',
+    'members',
     # third parties apps
-    'widget_tweaks', 
+    'widget_tweaks',
+    'ckeditor',
 
 ]
 
@@ -138,3 +140,7 @@ EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+LOGIN_REDIRECT_URL = 'blog_home'
+LOGOUT_REDIRECT_URL = 'blog_home'

@@ -24,15 +24,27 @@
 <div id="container2">
     <div class="row">
         <div class="col-md-8 mt-3 left">
+
             <h3><a class="add-post" href="{% url 'add_post' %}">+ ADD POST</a></h3>
+
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
                     <p class="h6">{{ post.created_on}} </p>
                     <h2 class="h5">{{ post.title }}</h2>
-                    <p class="h5">{{post.content|slice:":200" }}</p><br>
-                    <p class="h4">by {{post.author}} {{post.author.last_name}} </p>
+                    <p class="h5">{{post.prefazione }}</p><br>
+                    <p class="h4">by {{post.author}}</p>
+                    <div class="justify">
                     <a href="{% url 'post_detail' post.pk  %}" class="btn  btn-read-more">Read More&Rightarrow;</a>
+
+                    {% if user.is_authenticated %}
+                        {% if user.id == post.author.id %}
+                    <a class="btn  btn-back  btn-update" href="{% url 'update_post' post.pk %}">Edit</a>
+                    <a class="btn  btn-back  btn-delete" href="{% url 'delete_post' post.pk %}">Delete</a>
+                        {% endif %}
+                    {% endif %}
+                    </div>
+
                 </div>
             </div>
             {% endfor %}
