@@ -1,0 +1,329 @@
+body {
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.masthead {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    width: 40%;
+    background-color: none;
+    margin-bottom: 3%;
+}
+
+.masthead {
+    min-width: 340px;
+    max-width: 430px;
+}
+
+#container1 h3 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#container1 p {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+.add-post {
+    background: rgb(172, 83, 83);
+    color: black;
+    width: 125px;
+    border-radius: 4px;
+    border: 2px solid black;
+    padding: 4px;
+    text-align: right;
+    margin-left: 66%;
+    text-decoration: none;
+}
+
+.add-post:hover {
+    background: rgb(147, 108, 108);
+    padding: 5px;
+}
+
+.card-body{
+    border: solid 2.5px black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 15px;
+}
+
+.btn {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 3px;
+    background:rgb(192,192,192);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    font-size: 18px;
+    padding: 3px 8px;
+    background:rgb(169,169,169);
+}
+
+.btn:link {
+    color: rgb(1,112,112);
+}
+
+.btn:visited {
+    color: rgb(1,112,112);
+}
+
+.btn-back {
+    margin-left: 20px;
+    padding: 3px;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+.btn-submit {
+    text-align: center;
+    margin: auto;
+}
+
+#btn-comment-back {
+    margin-left: 10%;
+    padding: 3px;
+    text-decoration: none;
+    margin-bottom: 0;
+    background:rgb(255,255,255);
+}
+
+.justify {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#comments {
+    text-align: center;
+    margin: 15px;
+}
+
+.form-content {
+    width: 100%;
+    padding: 3px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.form-line {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-title {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.form-comment {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-comment-area {
+    width: 100%;
+    height: 60px;
+    padding: 3px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#comment-section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    margin-bottom: 1%;
+}
+
+.errorlist {
+    display: block;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: red;
+    margin-left: 10%;
+}
+
+.form-prefazione {
+    width: 100%;
+    height: 55px;
+    padding: 3px;
+    font-size: 15px;
+}
+
+.form-author {
+    margin: 10px 0;
+    width: 80%;
+    height: 30px;
+}
+
+.alert {
+    text-align: center;
+    font-size: 20px;
+    color: green;
+}
+
+.h6 {
+    text-align: right;
+    margin-bottom:5px;
+}
+
+.h5 {
+    margin-top:8px;
+}
+
+.h4 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.h1 {
+    margin-bottom: 10px;
+}
+
+.crypto-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.comment-date {
+    float: right;
+    font-size: 12px;
+    font-weight: none;
+    font-style: oblique;
+
+}
+
+.title-text {
+    font-weight: 900;
+    text-align: center;
+}
+
+.post-title {
+    padding: 15px;
+}
+
+.form-group {
+    margin: 15px;
+}
+
+.card-text{
+    padding: 15px;
+}
+
+.post-date {
+    margin-bottom: 1%;
+    text-align: right;
+    font-size: 18px;
+}
+
+.posted-by {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    font-style: oblique;
+}
+
+input {
+    display: block;
+    margin: auto;
+    width: 85%;
+    height: 25px;
+    margin-top: 4px;
+}
+
+textarea {
+    display: block;
+    margin: auto;
+    width: 85%;
+    height: 50px;
+    margin-top: 4px;
+}
+
+#id_content {
+    height: 55%;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#comment-section {
+    width: 80%;
+    margin-bottom: 1%;
+}
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+#comment-section {
+    width: 90%;
+    margin-bottom: 1%;
+}
+
+.add-post {
+    margin-left: 60%;
+}
+}
+
+
+@media screen and (max-width: 360px) {
+
+.add-post {
+    margin-left: 50%;
+}
+
+#comment-section {
+    width: 98%;
+    margin-bottom: 1%;
+}
+
+.masthead {
+    padding: 0;
+    width: auto;
+    background-color: none;
+    margin-bottom: 3%;
+}
+
+.masthead {
+    min-width: 300px;
+    max-width: 430px;
+}
+
+}
