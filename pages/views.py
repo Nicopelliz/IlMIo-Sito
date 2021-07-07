@@ -9,7 +9,7 @@ def home(request):
 
 
 def music(request):
-    return render(request, 'coming-soon.html')
+    return render(request, 'music_page.html')
 
 
 def crypto(request):

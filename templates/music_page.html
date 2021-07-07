@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<style>
+
+body {
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.central {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    width: 90%;
+    background-color: none;
+    margin-bottom: 3%;
+}
+
+.link_tag {
+    text-decoration: none;
+    color : rgb(100,21,124);
+}
+
+
+.link_tag:hover{
+    font-size: 120%;
+    background-color: rgb(170, 170, 170);
+}
+
+.ciao {
+    padding-top: 2px;
+}
+
+</style>
+<div class="central">
+    <h1>My Music</h1>
+    <div class="ciao">
+    <a class="link_tag" href="https://soundcloud.com/kd-known-doubts">KD - Known Doubts</a>
+    </div>
+    <div class="ciao">
+    <a class="link_tag" href="https://soundcloud.com/niccol-pellizzari">Niccolò Pellizzari Trio</a>
+    </div>
+    <div class="ciao">
+    <a class="link_tag" href="https://www.youtube.com/watch?v=yYzke5AgmDw&ab_channel=Niccol%C3%B2Pellizzari">Crown of Thorns - Niccolò Pellizzari</a>
+    </div>
+</div>
+<div class="central">
+    <h1> As a Drummer</h1>
+    <div class="ciao">
+    <a class="link_tag" href="https://open.spotify.com/album/6stgFXAqLTQABo1qNAPgEJ">Nick June - Nowhere Boy</a>
+    </div>
+    <div class="ciao">
+    <a class="link_tag" href="https://open.spotify.com/album/09vvjANio4coFgk9PbEQKe">Alonso Del Rio - Y Si la Vida</a>
+    </div>
+    <div class="ciao">
+    <a class="link_tag" href="https://open.spotify.com/album/09vvjANio4coFgk9PbEQKe"></a>
+    </div>
+
+</div>
+</body>
+</html>
+
+{% endblock %}
+
