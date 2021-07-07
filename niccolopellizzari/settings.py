@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['ilmiositoesempio.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['ilmiositoesempio.herokuapp.com','127.0.0.1','localhost']
 
 
 # Application definition
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # third parties apps
     'widget_tweaks',
     'ckeditor',
+    'whitenoise.runserver_nostatic',
 
 ]
 
@@ -74,11 +75,25 @@ WSGI_APPLICATION = 'niccolopellizzari.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'nicco',
+
+        'USER': 'nicco',
+
+        'PASSWORD': '',
+
+        'HOST': 'localhost',
+
+        'PORT': 5433,
+
     }
+
 }
+
 
 
 # Password validation
